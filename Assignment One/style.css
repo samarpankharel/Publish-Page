@@ -1,0 +1,257 @@
+/* Formatting the default style of the page */
+* {
+    margin: 0;
+    padding: 0;
+    /*13.Box Model*/
+    box-sizing: border-box;
+  }
+  
+  /*for layouts that rely on full-height sections.*/ 
+  html, body {
+    height: 100%;
+  }
+/*Color variables*/ 
+:root {
+    --primary-color:#598381; 
+    --secondary-color:#b9cdda; 
+    --text-color: #424b54; 
+    --body-bg-color: #D7DAE5; 
+    --text-color2: #8EAF9D; 
+    --hover-color: #3D405B; 
+    --primary-heading-color: #ED7D3A;
+    --secondary-heading-color: #3D405B;
+
+}
+/*12.Custom Web Fonts*/
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('OpenSans-Regular-webfont.eot');
+    src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('OpenSans-Regular-webfont.woff2') format('woff2'),
+         url('OpenSans-Regular-webfont.woff') format('woff'),
+         url('OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*1.Type Selectors */
+header {
+    height: 50vh;
+    top: 10px;
+    /*background-color*/ 
+    background-color: var(--primary-color); 
+    /*14.gradients*/ 
+     background: radial-gradient(circle,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 33%, rgba(252, 176, 69, 1) 100%); 
+    /*11. Background Image Property*/
+     /* background-image while controlling size,position,repeatation and attachment*/ 
+    background: url('assets/pexels-bibekghosh-14553704.jpg') no-repeat center/cover fixed;    
+}
+body {
+    font-family: Arial, sans-serif; 
+     /* Text color */
+    color: var(--text-color);
+    /* Background color from above variable*/
+    background-color: var(--body-bg-color); 
+}
+h3 {
+    /* heading color from above variable*/
+    color: var(--secondary-heading-color); 
+    text-align: center; 
+    /*appropriate font-Sizing*/
+    font-size: clamp(2rem, 3vw, 5rem); 
+}
+/*9.Direct Sibling Combinator */
+h1 + h2{
+    /* Heading color from above variable */
+    color: var(--primary-heading-color); 
+    /* Center align headings */
+    text-align: center; 
+    /*appropriate font-Sizing*/
+    font-size: clamp(3rem, 5vw, 8rem);  
+}
+
+/*2.Class Selector */
+ .requirements{
+    /*appropriate font-Sizing*/
+    font-size: clamp(1.5rem, 2vw, 3rem); 
+    text-align: center; 
+    /* Text color using css variable */
+    color: var(--text-color); 
+    margin: 20px; 
+}
+.summary {
+    background-color: var(--secondary-color); /* Background color for summary */
+    padding: 20px; 
+    /* Rounded corners for summary */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Margin around summary */
+    margin: 20px; 
+}
+.benefits {
+    background-color: var(--primary-color); 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 20px; 
+}
+ .preamble {
+    background-color: var(--text-color2); /* Background color for preamble */
+    color: white; /* Text color for requirements */
+    padding: 20px; /* Padding for requirements */
+    border-radius: 10px; /* Rounded corners for requirements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin around requirements */
+}
+/*3.ID Selector */
+#zen-explanation {
+    background-color: var(--primary-color); /* Background color for zen explanation */
+    color: white; /* Text color for zen explanation */
+    padding: 20px; /* Padding for zen explanation */
+    border-radius: 10px; /* Rounded corners for zen explanation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin around zen explanation */
+}
+#zen-participation {
+    background-color: var(--secondary-color); /* Background color for zen participation */
+    color: var(--text-color); /* Text color for zen participation */
+    padding: 20px; /* Padding for zen participation */
+    border-radius: 10px; /* Rounded corners for zen participation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px; /* Margin around zen participation */
+}
+
+/*4.attribute Selector */
+[role="article"] {
+   font-size: clamp(1rem, 1vw, 2rem);  
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+}
+/*5.Pseudo-class Selector */
+a {
+    /* Link color */
+    color: var(--primary-color); 
+    /* Remove underline from links */
+    text-decoration: none; 
+}
+
+/*6.Pseudo-element Selector */
+h1::first-letter {
+    font-size: 2em; /* Make the first letter larger */
+    color: var(--primary-color); /* Color for the first letter */
+    font-weight: bold; /* Bold the first letter */
+}
+/*8.Child combinator  */
+     /*for direct children of .page-wrapper */
+    .page-wrapper > section {
+    font-family: cursive, sans-serif;   
+    /* Padding for  section */
+    padding-bottom: 10px; 
+    /* Margin for spacing */
+    margin-bottom: 10px; 
+    /* Text color for  section */
+    color: var(--text-color2);  
+   
+    
+}
+/*10.General Sibling Combinator */
+    /*next sibling of h3 */
+    h3 ~ p {
+    /* Text color for paragraphs following h3 */
+    color: var(--text-color); 
+    /* Font size for paragraphs following h3 */
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+   
+}
+/*14.hover Effects */
+a:hover {
+    /* Change link color on hover */
+    color: var(--hover-color); 
+    /* Underline links on hover */
+    text-decoration: underline; 
+}
+/* General sidebar styling */
+aside {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  font-family: cursive, sans-serif;
+}
+aside  h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+/* All navs in aside */
+/*7.Descendant combinator */
+aside nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+/*7.Descendant combinator */
+aside nav ul li {
+  margin-bottom: 0.8rem;
+}
+/* Design Name and Designer */
+.design-name {
+  font-weight: bold;
+  color: #0077cc;
+  text-decoration: none;
+}
+.design-name:hover {
+  text-decoration: underline;
+}
+.designer-name {
+  font-style: italic;
+  color: #555;
+  text-decoration: none;
+}
+.designer-name:hover {
+  text-decoration: underline;
+}
+/* Archives navigation using descendant combinators and general properties */
+.design-archives ul li a {
+  color: #444;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.design-archives ul li a:hover {
+  text-decoration: underline;
+}
+
+.indicator {
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+
+/* Resources section using descendant combinators and general properties */
+.zen-resources ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+.zen-resources ul li a {
+  color: #222;
+  text-decoration: none;
+}
+
+.zen-resources ul li a:hover {
+  color: #0055aa;
+  text-decoration: underline;
+}
+/* Footer styling */
+footer {
+    background-color: var(--text-color2); /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center align footer text */
+    padding: 20px; /* Padding for footer */
+    position: relative; /* Positioning for footer */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width footer */
+    
+}
