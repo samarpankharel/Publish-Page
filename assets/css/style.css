@@ -16,7 +16,8 @@
     --secondary-color:#b9cdda; 
     --text-color: #424b54; 
     --body-bg-color: #D7DAE5; 
-    --text-color2: #8EAF9D; 
+    --text-color2: #000000; 
+    --extra-color:#48cae4;
     --hover-color: #3D405B; 
     --primary-heading-color: #ED7D3A;
     --secondary-heading-color: #3D405B;
@@ -54,6 +55,13 @@ body {
     color: var(--text-color);
     /* Background color from above variable*/
     background-color: var(--body-bg-color); 
+}
+h1{
+    /* Heading color from above variable*/
+    color: var(--primary-heading-color); 
+    text-align: center; 
+    /*appropriate font-Sizing*/
+    font-size: clamp(3rem, 5vw, 8rem); 
 }
 h3 {
     /* heading color from above variable*/
@@ -99,7 +107,7 @@ h1 + h2{
     margin: 20px; 
 }
  .preamble {
-    background-color: var(--text-color2); /* Background color for preamble */
+    background-color: var(--extra-color); /* Background color for preamble */
     color: white; /* Text color for requirements */
     padding: 20px; /* Padding for requirements */
     border-radius: 10px; /* Rounded corners for requirements */
@@ -109,7 +117,6 @@ h1 + h2{
 /*3.ID Selector */
 #zen-explanation {
     background-color: var(--primary-color); /* Background color for zen explanation */
-    color: white; /* Text color for zen explanation */
     padding: 20px; /* Padding for zen explanation */
     border-radius: 10px; /* Rounded corners for zen explanation */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -117,7 +124,6 @@ h1 + h2{
 }
 #zen-participation {
     background-color: var(--secondary-color); /* Background color for zen participation */
-    color: var(--text-color); /* Text color for zen participation */
     padding: 20px; /* Padding for zen participation */
     border-radius: 10px; /* Rounded corners for zen participation */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -137,6 +143,16 @@ a {
     /* Remove underline from links */
     text-decoration: none; 
 }
+a:hover {
+    /* Change link color on hover */
+    color: var(--hover-color); 
+    /* Underline links on hover */
+    text-decoration: underline; 
+}
+a:visited {
+    /* Visited link color */
+    color: var(--extra-color); 
+}
 
 /*6.Pseudo-element Selector */
 h1::first-letter {
@@ -154,27 +170,18 @@ h1::first-letter {
     margin-bottom: 10px; 
     /* Text color for  section */
     color: var(--text-color2);  
-   
-    
+     
 }
 /*10.General Sibling Combinator */
     /*next sibling of h3 */
     h3 ~ p {
     /* Text color for paragraphs following h3 */
-    color: var(--text-color); 
+    color: var(--text-color2); 
     /* Font size for paragraphs following h3 */
-    font-size: clamp(1rem, 1.2vw, 1.5rem);
-   
-}
-/*14.hover Effects */
-a:hover {
-    /* Change link color on hover */
-    color: var(--hover-color); 
-    /* Underline links on hover */
-    text-decoration: underline; 
+    font-size: clamp(1rem, 1.2vw, 1.5rem);  
 }
 /* General sidebar styling */
-aside {
+ aside {
   background-color: #f4f4f4;
   padding: 2rem;
   font-family: cursive, sans-serif;
@@ -192,15 +199,15 @@ aside nav ul {
   list-style: none;
   padding: 0;
   margin: 0 0 2rem 0;
-}
-/*7.Descendant combinator */
-aside nav ul li {
+} 
+
+ aside nav ul li {
   margin-bottom: 0.8rem;
-}
+} 
 /* Design Name and Designer */
-.design-name {
+ .design-name {
   font-weight: bold;
-  color: #0077cc;
+  color: var(--extra-color);
   text-decoration: none;
 }
 .design-name:hover {
@@ -213,9 +220,10 @@ aside nav ul li {
 }
 .designer-name:hover {
   text-decoration: underline;
-}
+} 
+
 /* Archives navigation using descendant combinators and general properties */
-.design-archives ul li a {
+ .design-archives ul li a {
   color: #444;
   font-weight: 500;
   text-decoration: none;
@@ -231,7 +239,7 @@ aside nav ul li {
 }
 
 /* Resources section using descendant combinators and general properties */
-.zen-resources ul {
+ .zen-resources ul {
   list-style-type: disc;
   padding-left: 1.2rem;
 }
@@ -244,15 +252,15 @@ aside nav ul li {
 .zen-resources ul li a:hover {
   color: #0055aa;
   text-decoration: underline;
-}
+} 
+
 /* Footer styling */
 footer {
     background-color: var(--text-color2); /* Footer background color */
-    color: white; /* Footer text color */
+    color: white; /*Footer text color  */
     text-align: center; /* Center align footer text */
     padding: 20px; /* Padding for footer */
     position: relative; /* Positioning for footer */
     bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width footer */
-    
+    width: 100%; /* Full width footer */  
 }
